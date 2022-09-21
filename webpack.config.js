@@ -31,12 +31,12 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "src"),
     },
-    // proxy: {
-    //   "**/api/**": {
-    //     target: "http://web/api/index.php",
-    //     secure: false,
-    //     changeOrigin: true,
-    //   },
-    // },
+    proxy: {
+      "**/api/**": {
+        target: "http://web/api/index.php",
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
 };
