@@ -2,12 +2,16 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src/index.js"),
-  output: { path: path.resolve(__dirname, "build"), filename: "main.js" },
+  entry: {
+    main: path.resolve(__dirname, "./src/index.js"),
+    theory: path.resolve(__dirname, "./src/theory.js"),
+  },
+  output: { path: path.resolve(__dirname, "build"), filename: ["name"].js },
   plugins: [
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, "./src/index.html"),
       filename: "index.html",
+      chunks: ["theory", "main"],
     }),
   ],
   module: {
